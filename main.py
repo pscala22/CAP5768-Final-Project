@@ -1,3 +1,9 @@
+#Paul Scala
+#CAP5768
+#Final Project
+#December 7th 2022
+#Ran using Python 3.9.12
+
 from sklearn.datasets import load_breast_cancer,load_digits,load_iris
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans,DBSCAN,AgglomerativeClustering
@@ -14,6 +20,7 @@ colors = ['violet','indigo','blue','green','yellow','orange','red','black','cyan
 
 for i in range(10):
     plt.scatter(df[label==i,0],df[label==i,1],label=i,color=colors[i])
+plt.title("Part 1")
 plt.legend()
 plt.show()
 
@@ -36,6 +43,7 @@ for i in range(23):
     xy = df[class_member_mask & ~core_samples_mask]
     plt.scatter(xy[:,0],xy[:,1],color=colors[i])
 plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.5), ncol=5)
+plt.title("Part 2")
 plt.show()
 
 #Part 3
@@ -48,6 +56,7 @@ colors = ['blue','green','yellow','red','black']
 
 for i in range(5):
     plt.scatter(df[label==i,0],df[label==i,1],label=i,color=colors[i])
+plt.title("Part 3")
 plt.legend()
 plt.show()
 
@@ -63,6 +72,7 @@ colors = [plt.cm.Spectral(each) for each in np.linspace(0, 1, 20)]
 for i in range(20):
     plt.scatter(df[label==i,0],df[label==i,1],label=i,color=colors[i])
 plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.5), ncol=5)
+plt.title("Part 4 Kmeans")
 plt.show()
 
 #agglomerative
@@ -71,4 +81,5 @@ label = ac.fit_predict(df)
 for i in range(20):
     plt.scatter(df[label==i,0],df[label==i,1],label=i,color=colors[i])
 plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.5), ncol=5)
+plt.title("Part 4 Agglomerative")
 plt.show()
